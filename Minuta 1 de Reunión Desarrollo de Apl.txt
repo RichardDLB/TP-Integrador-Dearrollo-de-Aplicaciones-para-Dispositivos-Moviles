@@ -1,0 +1,57 @@
+Minuta de Reunión Desarrollo de Aplicaciones Móviles 
+
+Reunión: #1
+Fecha: 10 de Octubre de 2025
+Horario: 17:00
+
+Asistentes:
+
+•	Bruno Herrea	 
+•	Juan Chaile
+•	Richard López
+
+Propósito de la Reunión:
+
+	Organizar entrega H1 - Obligatorio:
+	Definición de tema y app
+	Armado de minuta
+	Flujo de pantallas
+	Repositorio inicializado
+	Tablero de seguimiento
+
+
+Desarrollo de la Reunión:
+
+Definición de tema y app: 
+
+Aplicación que permita conocer las promociones en los supermercados de buenos aires, filtrando por supermercado o por día.
+
+Se definió el flujo de pantallas y wireframe :
+	
+	Pantalla 1 (Búsqueda)
+	Pantallas 2 (Resultados)
+	Pantalla 3 (Favoritos)
+
+Se inicializó el repositorio
+
+	https://github.com/RichardDLB/TP-Integrador-Dearrollo-de-Aplicaciones-para-Dispositivos-Moviles
+
+Se creo el tablero de tareas en Trello y se designaron tareas para cada integrante del equipo.
+
+	https://trello.com/b/U1RbLl5c/desarrollo-de-aplicaciones-para-dispositivos-moviles
+
+Próximas tareas:
+
+	1. Crear ramas desarrollo en Git 
+
+	Ramas: 
+main
+desarrollo
+richard-develop
+bruno-develop
+juan-develop
+
+
+Próxima Reunión:
+
+Semana del 14 de Septiembre al 21 de Octubre del 2025
