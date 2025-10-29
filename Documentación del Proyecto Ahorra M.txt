@@ -1,0 +1,116 @@
+Documentación del Proyecto: Ahorra Max
+
+1. Portada
+AHORRA MAX - Aplicación Móvil de Promociones en Supermercados
+
+Trabajo Presentado para: Desarrollo de Aplicaciones Móviles
+Estudiante: Richard Lopez, Bruno Herrera, Juan Chaile
+Curso: TSDS
+Profesor: Alejandro Peña
+Instituto: IFTS 18
+Fecha: Octubre del 2025
+
+2. Resumen Ejecutivo
+Ahorra Max es una aplicación móvil diseñada para los residentes de la Ciudad de Buenos Aires que buscan optimizar sus compras en supermercados. La app centraliza y organiza las promociones más relevantes, permitiendo filtrar por establecimiento y por día de la semana, facilitando así la planificación de compras y el ahorro familiar.
+
+3. Introducción
+Contexto: En el actual contexto económico, los consumidores de Buenos Aires necesitan herramientas que les permitan maximizar su poder adquisitivo. Las promociones de supermercados suelen estar dispersas en múltiples folletos físicos y digitales, haciendo difícil su seguimiento y comparación.
+
+Problema: Los habitantes de CABA carecen de una plataforma centralizada que les permita:
+
+Encontrar rápidamente las promociones por supermercado
+Planificar sus compras según los días de mejores descuentos
+Comparar ofertas entre diferentes cadenas
+
+Objetivo General: Desarrollar una aplicación móvil que centralice y organice las promociones de supermercados en CABA.
+
+4. Análisis y Planificación
+Público Objetivo:
+
+Demográfico: Hombres y mujeres de 18-65 años residentes en CABA
+Socioeconómico: Familias y personas que realizan compras regulares en supermercados
+Necesidad: Optimizar el presupuesto de compras y ahorrar tiempo buscando promociones
+
+
+5. Requisitos Funcionales:
+
+RF1: El usuario debe poder registrarse e ingresar
+RF2: El usuario debe poder filtrar promociones por día de la semana
+RF3: El usuario debe poder ver promociones por supermercado
+RF4: El usuario debe poder marcar promociones como favoritas
+
+
+Requisitos No Funcionales:
+
+RNF1: Interfaz responsive y rápida (El cold start deberá ser menor a 2.5 segundos en un dispositivo Google Pixel 9 Pro con 4GB de RAM y 2 Cores. Scroll fluido (mayor a 54 fps).)
+RNF2: Compatibilidad con Android e iOS
+
+6. Diseño de la Aplicación
+
+Arquitectura de la Información:
+
+Pantalla de Loggin
+    ↓
+Pantalla de Inicio (con filtros)
+Promociones sugeridas
+    ↓
+Filtro por Supermercado → [Coto, Carrefour, Disco, Jumbo, etc.]
+Filtro por Día → [Lunes, Martes, Miércoles, etc.]
+    ↓
+Pantalla de favoritos
+
+Pantallas:
+
+Pantalla 1: Pantalla de Loggin con saludo , logo , capo de usuario, contraseña y botón de loggin
+Pantalla 2: Pantalla de Inicio con una lista de cards, un botos desplegable para supermercado, un botón desplegable para día, un botón de buscar y un botos de favoritos
+Pantalla 3: Detalle de promociones por día o supermercado precio, vigencia y supermercado
+Pantalla 4: Pantalla de favoritos con una lista de cards y un botón de eliminar por cada card
+
+Paleta de Colores:
+
+Primario: Verde (#27AE60) - simbolizando ahorro
+Secundario: Naranja (#F39C12) - para destacar ofertas
+Fondo: Gris claro (#F8F9FA)
+Texto: Gris oscuro (#2C3E50)
+
+Tipografía:
+Títulos: Montserrat Bold
+Texto normal: Open Sans Regular
+Precios: Montserrat SemiBold
+
+7. Desarrollo
+
+Tecnología Elegida:
+Justificación: 
+Stack Tecnológico:
+
+
+8. Cronograma
+
+Semana 1: Investigación y diseño UI/UX
+Semana 2: Configuración del entorno y estructura base
+Semana 3: Desarrollo de pantallas principales
+Semana 4: Implementación de filtros y funcionalidades
+Semana 5: Pruebas y ajustes finales
+Semana 6: Entrega y documentación
+
+
+9. Pruebas
+
+Casos de Prueba:
+
+CP001: Verificar que se carguen las promociones al iniciar la app
+CP002: Probar filtro por supermercado (ej: solo promociones de Coto)
+CP003: Probar filtro por día (ej: promociones de los martes)
+
+Pruebas con Usuarios:
+
+Observar si encuentran fácilmente las funcionalidades principales
+Recoger feedback sobre diseño y usabilidad
+
+10. Conclusiones 
+
+Ayudar a las familias de CABA a ahorrar en sus compras
+Centralizar información dispersa en una sola plataforma
+Promover el consumo inteligente y planificado
+
