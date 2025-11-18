@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/iv_favorite_star"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_star_empty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="Favorito" />
+
+        <TextView
+            android:id="@+id/tv_porcentaje_cuotas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="30%" />
+
+        <TextView
+            android:id="@+id/tv_label_descuento_cuotas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/tv_porcentaje_cuotas"
+            app:layout_constraintTop_toBottomOf="@id/tv_porcentaje_cuotas"
+            tools:text="De Descuento" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_left_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="tv_porcentaje_cuotas, tv_label_descuento_cuotas" />
+
+        <TextView
+            android:id="@+id/tv_descripcion_corta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="start"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle= "bold"
+            app:layout_constraintEnd_toStartOf="@id/iv_favorite_star"
+            app:layout_constraintStart_toEndOf="@id/barrier_left_text"
+            app:layout_constraintTop_toTopOf="@id/tv_porcentaje_cuotas"
+            tools:text="En un pago con tarjetas de crédito Visa, Mastercard y Cabal" />
+
+        <TextView
+            android:id="@+id/tv_descripcion_larga"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_descripcion_corta"
+            app:layout_constraintTop_toBottomOf="@id/tv_descripcion_corta"
+            tools:text="Válido de Jueves a domingo." />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_text_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="tv_label_descuento_cuotas, tv_descripcion_larga" />
+
+        <LinearLayout
+            android:id="@+id/ll_logos_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:gravity="start|center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier_text_bottom">
+
+            <ImageView
+                android:id="@+id/iv_logo_banco_1"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:scaleType="fitCenter"
+                android:layout_marginEnd="12dp"
+                tools:src="@drawable/banco_ciudad_logo"
+                android:contentDescription="Logo Banco 1"/>
+
+            <ImageView
+                android:id="@+id/iv_logo_banco_2"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:scaleType="fitCenter"
+                android:layout_marginEnd="12dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:src="@drawable/galicia_logo"
+                android:contentDescription="Logo Banco 2"/>
+
+            <ImageView
+                android:id="@+id/iv_logo_tarjeta"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:scaleType="fitCenter"
+                android:layout_marginEnd="8dp"
+                tools:src="@drawable/jumbo_logo"
+                android:contentDescription="Logo Supermercado"/>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

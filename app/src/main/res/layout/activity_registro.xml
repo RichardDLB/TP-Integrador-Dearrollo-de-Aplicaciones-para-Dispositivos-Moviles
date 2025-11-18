@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="32dp"
-    android:background="@color/white"
+    android:background="@android:color/white"
     tools:context=".RegistroActivity">
 
     <TextView
@@ -15,7 +15,7 @@
         android:text="Crear Cuenta Nueva"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@android:color/black"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -55,7 +55,7 @@
         android:text="Guardar"
         android:textAllCaps="false"
         android:textSize="18sp"
-        android:textColor="@color/black"
+        android:textColor="@android:color/black"
         android:background="@drawable/bg_redondeado_naranja"
         app:backgroundTint="@null"
         android:layout_marginTop="32dp"

@@ -1,97 +1,50 @@
 package com.example.ahorramaxlogin
 
-// --- Importaciones necesarias ---
-import android.content.Context
+import android.graphics.Color
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.os.VibrationEffect
-import android.os.Vibrator
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.ahorramaxlogin.RegistroActivity
+import com.example.ahorramaxlogin.databinding.ActivityMainBinding
 
+/*
+ * Esta es tu ACTIVIDAD DE LOGIN (la primera que se abre)
+ */
 class MainActivity : AppCompatActivity() {
+
+    // 1. Declarar la variable de ViewBinding
+    // Esta variable se conecta con tu archivo 'activity_main.xml'
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
 
-        // 1. Obtener referencias a los componentes del layout (Usando cast explícito para evitar errores de tipo)
-        val campoUsuario = findViewById(R.id.etUsuario) as EditText
-        val campoContrasena = findViewById(R.id.etContrasena) as EditText
-        val botonIngresar = findViewById(R.id.btnIngresar) as Button
-        val botonRegistrar = findViewById(R.id.btnRegistrar) as Button
+        // 2. "Inflar" el layout y conectar el binding
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.root.setBackgroundColor(Color.WHITE)
+        // 3. Configurar el botón "Ingresar"
+        // Usa el ID que pusiste en tu XML (btnIngresar)
+        binding.btnIngresar.setOnClickListener {
 
-        // 2. Acción del botón Ingresar
-        botonIngresar.setOnClickListener {
-            verificarCredenciales(campoUsuario, campoContrasena)
-        }
+            val intent = Intent(this, OffersActivity::class.java)
 
-        // 3. Acción del botón Registrar (Navegación)
-        botonRegistrar.setOnClickListener {
-            val intent = Intent(this, RegistroActivity::class.java)
+            // 5. Iniciar la actividad de ofertas
             startActivity(intent)
+
+            // 6. (Opcional) Cerrar esta actividad (Login) para que el usuario
+            // no pueda "volver" a ella presionando el botón de atrás.
+            finish()
         }
 
-        // 4. Configuración de Edge-to-Edge
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-    }
+        // 7. (Opcional) Configurar el botón "Registrar"
+        // Asumo que el ID en tu XML es 'btnRegistrar'
+        binding.btnRegistrar.setOnClickListener {
 
-    // --- FUNCIONES AUXILIARES ---
+            // Crear el "Intent" para abrir la pantalla de registro
+            val intent = Intent(this, RegistroActivity::class.java)
 
-    private fun mostrarMensaje(contexto: Context, mensaje: String) {
-        Toast.makeText(contexto, mensaje, Toast.LENGTH_SHORT).show()
-    }
-
-    private fun vibrar() {
-        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
-        } else {
-            @Suppress("DEPRECATION")
-            vibrator.vibrate(200)
-        }
-    }
-
-    private fun verificarCredenciales(usuario: EditText, contrasena: EditText) {
-        val usuarioIngresado = usuario.text.toString()
-        val contrasenaIngresada = contrasena.text.toString()
-
-        // Cargar las credenciales guardadas (SharedPreferences)
-        val prefs = getSharedPreferences("AhorraMaxPrefs", Context.MODE_PRIVATE)
-        val usuarioGuardado = prefs.getString("USUARIO_GUARDADO", null)
-        val contrasenaGuardada = prefs.getString("CONTRASENA_GUARDADA", null)
-
-        if (usuarioIngresado.isEmpty() || contrasenaIngresada.isEmpty()) {
-            mostrarMensaje(this, "⚠️ Por favor, complete ambos campos.")
-            vibrar()
-            return
-        }
-
-        if (usuarioGuardado == null) {
-            mostrarMensaje(this, "❌ No hay usuarios registrados. Regístrese.")
-            vibrar()
-            return
-        }
-
-        // Comparar credenciales
-        if (usuarioIngresado == usuarioGuardado && contrasenaIngresada == contrasenaGuardada) {
-            mostrarMensaje(this, "✅ Ingreso exitoso. ¡Bienvenido!")
-            // TODO: Agregar Intent a la pantalla principal
-        } else {
-            mostrarMensaje(this, "❌ Usuario o Contraseña incorrecta.")
-            vibrar()
+            // Iniciar la actividad de registro
+            startActivity(intent)
         }
     }
 }

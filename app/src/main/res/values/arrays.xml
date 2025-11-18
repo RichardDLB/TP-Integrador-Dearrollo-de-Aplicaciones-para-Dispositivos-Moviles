@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="supermercado_options">
+        <item>Supermercado</item>
+        <item>Coto</item>
+        <item>Dia</item>
+        <item>Carrefour</item>
+        <item>Jumbo</item>
+    </string-array>
+    <string-array name="dia_options">
+        <item>Día</item>
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miércoles</item>
+        <item>Jueves</item>
+        <item>Viernes</item>
+        <item>Sábado</item>
+        <item>Domingo</item>
+    </string-array>
+</resources>
